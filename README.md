@@ -4,4 +4,5 @@ My first React Native App developed from docs guide
 
 # Things i've learned and implemented(day wise)
 
-    Day1: Setup, create first react native app using Expo
+    Day 1: Setup, create first react native app using Expo
+    Day 2: Add Navigation, Stack and Tabs
