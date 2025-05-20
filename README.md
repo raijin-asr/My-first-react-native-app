@@ -10,3 +10,4 @@ My first React Native App using Expo (Guide from Documentation)
     Day 4: Implement button to pick selected image
     Day 5: Create a modal to select an emoji and display over image
     Day 6: Add doubleTap gesture to scale image and pan to move image
+    Day 7: Implement take a screenshot feature
