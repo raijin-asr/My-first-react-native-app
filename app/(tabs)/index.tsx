@@ -1,4 +1,4 @@
-import { Text, View,  StyleSheet } from 'react-native';
+import { Text, View,  StyleSheet, Platform } from 'react-native';
 import ImageViewer from '@/components/ImageViewer';
 import Button from '@/components/Button';
 import * as ImagePicker from 'expo-image-picker';
@@ -13,6 +13,9 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 import * as MediaLibrary from 'expo-media-library';
 import { captureRef } from 'react-native-view-shot';
+
+import domtoimage from 'dom-to-image';
+
 
 const PlaceholderImage = require('@/assets/images/me.jpeg');
 
@@ -59,19 +62,37 @@ export default function Index() {
   };
 
   const onSaveImageAsync = async () => {
-    try {
-          const localUri = await captureRef(imageRef, {
-            height: 440,
-            quality: 1,
-          });
+    if (Platform.OS !== 'web') {
 
-          await MediaLibrary.saveToLibraryAsync(localUri);
-          if (localUri) {
-            alert('Saved!');
+      try {
+            const localUri = await captureRef(imageRef, {
+              height: 440,
+              quality: 1,
+            });
+
+            await MediaLibrary.saveToLibraryAsync(localUri);
+            if (localUri) {
+              alert('Saved!');
+            }
+          } catch (e) {
+            console.log(e);
           }
-        } catch (e) {
-          console.log(e);
-        }
+        } else {
+            try {
+              const dataUrl = await domtoimage.toJpeg(imageRef.current, {
+                quality: 0.95,
+                width: 320,
+                height: 440,
+              });
+
+              let link = document.createElement('a');
+              link.download = 'screnshot-website.jpeg';
+              link.href = dataUrl;
+              link.click();
+            } catch (e) {
+              console.log(e);
+            }
+          }  
     };
 
 
