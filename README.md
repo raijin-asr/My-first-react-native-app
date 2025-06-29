@@ -12,3 +12,4 @@ My first React Native App using Expo (Guide from Documentation)
     Day 6: Add doubleTap gesture to scale image and pan to move image
     Day 7: Implement take a screenshot feature
     Day 8: Implement screenshot in website platform
+    Day 9: Configure status bar, splash screen and app icon
