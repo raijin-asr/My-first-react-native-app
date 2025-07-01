@@ -18,8 +18,16 @@ My first React Native App using Expo (Guide from Documentation)
 
 ![aa](https://github.com/user-attachments/assets/14a695ac-2e83-4ec2-9010-69738446c8f2)
 
-Fig 1: Splash Screen</br>
+</br>Fig 1: Splash Screen</br>
 
 ![a3](https://github.com/user-attachments/assets/f6f135e7-bec6-460d-8b00-f3bae00929b4)
 
-Fig 2: Home Screen</br>
+</br>Fig 2: Home Screen</br>
+
+![a4](https://github.com/user-attachments/assets/a1e165ef-08e3-4752-80c6-743f7905619c)
+
+</br>Fig 3: Button to pick selected image</br>
+
+![a5](https://github.com/user-attachments/assets/9032c058-b281-4fa6-bdb5-3d76dd36d49b)
+
+</br>Fig 4: Modal to select an emoji and display over image</br>
