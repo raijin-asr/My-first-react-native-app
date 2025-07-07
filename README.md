@@ -14,6 +14,7 @@ My first React Native App using Expo (Guide from Documentation)
     Day 8: Implement screenshot in website platform
     Day 9: Configure status bar, splash screen and app icon
     Day10: Design content of about page
+    Day11: Update about page with contact and legal information
 
 <h2>SCREENSHOTS</h2>
 

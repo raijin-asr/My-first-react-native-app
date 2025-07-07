@@ -1,8 +1,24 @@
-import { View, Text, StyleSheet, Image, ScrollView} from 'react-native';
+import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, Linking } from 'react-native';
+import { Ionicons } from '@expo/vector-icons'; 
+
 
 export default function AboutScreen() {
   const appVersion = '1.0.0'; 
   const developerName = 'Raijin';
+ const supportEmail = 'support@raijintodo.com';
+  const websiteUrl = ''; 
+  const privacyPolicyUrl = ''; 
+  const termsOfServiceUrl = ''; 
+
+const handleLinkPress = (url: string) => {
+    Linking.canOpenURL(url).then(supported => {
+      if (supported) {
+        Linking.openURL(url);
+      } else {
+        alert(`Cannot open the link: ${url}`);
+      }
+    });
+  };
 
   return (
     <ScrollView style={styles.scrollViewContainer} contentContainerStyle={styles.container}>
@@ -24,6 +40,30 @@ export default function AboutScreen() {
         </Text>
       </View>
 
+      {/* Contact Section */}
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Get in Touch</Text>
+        <TouchableOpacity style={styles.contactItem} onPress={() => Linking.openURL(`mailto:${supportEmail}`)}>
+          <Ionicons name="mail-outline" size={20} color="#333" style={styles.contactIcon} />
+          <Text style={styles.contactText}>{supportEmail}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.contactItem} onPress={() => handleLinkPress(websiteUrl)}>
+          <Ionicons name="globe-outline" size={20} color="#333" style={styles.contactIcon} />
+          <Text style={styles.contactText}>Visit Our Website</Text>
+        </TouchableOpacity>
+        {/* Add more contact options like social media */}
+      </View>
+
+      {/* Legal Section */}
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Legal & Privacy</Text>
+        <TouchableOpacity onPress={() => handleLinkPress(privacyPolicyUrl)}>
+          <Text style={styles.linkText}>Privacy Policy</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => handleLinkPress(termsOfServiceUrl)}>
+          <Text style={styles.linkText}>Terms of Service</Text>
+        </TouchableOpacity>
+      </View>
       {/* Footer */}
       <View style={styles.footer}>
         <Text style={styles.footerText}>© {new Date().getFullYear()} {developerName}</Text>
@@ -84,6 +124,25 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#555',
     lineHeight: 24,
+  },
+    contactItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 8,
+  },
+  contactIcon: {
+    marginRight: 10,
+  },
+  contactText: {
+    fontSize: 16,
+    color: 'blue', // Make it look like a link
+    textDecorationLine: 'underline',
+  },
+  linkText: {
+    fontSize: 16,
+    color: 'blue',
+    textDecorationLine: 'underline',
+    marginTop: 5,
   },
   footer: {
     marginTop: 30,
