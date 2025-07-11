@@ -34,4 +34,5 @@ My first React Native App using Expo (Guide from Documentation)
 
 </br>Fig 4: Modal to select an emoji and display over image</br>
 
+<img width="357" height="742" alt="image" src="https://github.com/user-attachments/assets/19a3e29e-5045-4b55-8691-e4d4c27638d0" />
 </br>Fig 5: About Page</br>
