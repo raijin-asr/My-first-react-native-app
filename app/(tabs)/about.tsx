@@ -75,7 +75,7 @@ const handleLinkPress = (url: string) => {
 const styles = StyleSheet.create({
   scrollViewContainer: {
     flex: 1,
-    backgroundColor: '#f5f5f5',
+    backgroundColor: 'black',
   
   },
   container: {
@@ -92,12 +92,12 @@ const styles = StyleSheet.create({
   appName: {
     fontSize: 28,
     fontWeight: 'bold',
-    color: '#333',
+    color: 'white',
     marginBottom: 5,
   },
   appVersion: {
     fontSize: 16,
-    color: '#666',
+    color: 'white',
     marginBottom: 30,
   },
   section: {
@@ -150,6 +150,6 @@ const styles = StyleSheet.create({
   },
   footerText: {
     fontSize: 14,
-    color: '#999',
+    color: 'white',
   },
 });
